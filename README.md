@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# Meme App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ứng dụng tạo meme đơn giản, hỗ trợ chỉnh sửa chữ, thêm hiệu ứng, lưu và chia sẻ meme. Hoạt động tốt trên cả web và thiết bị di động (PWA hoặc Capacitor).
 
-## Available Scripts
+## Tính năng
 
-In the project directory, you can run:
+- Chọn ảnh từ máy hoặc camera (trên mobile).
+- Thêm nhiều dòng chữ, chỉnh vị trí, màu sắc, font, kích thước.
+- Lưu meme về máy.
+- Chia sẻ meme qua các nền tảng (hỗ trợ chia sẻ file trên mobile, chia sẻ link trên web).
+- Giao diện tối ưu cho điện thoại.
 
-### `npm start`
+## Cài đặt & chạy dự án
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 1. Yêu cầu
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Node.js >= 16
+- npm hoặc yarn
 
-### `npm test`
+### 2. Cài đặt
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+```
 
-### `npm run build`
+### 3. Chạy trên web (localhost)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Truy cập [http://localhost:3000](http://localhost:3000) trên trình duyệt.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Build PWA
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 5. Chạy trên điện thoại (Capacitor)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Cài đặt Capacitor:
+  ```bash
+  npm install @capacitor/core @capacitor/cli
+  npx cap init
+  ```
+- Build web:
+  ```bash
+  npm run build
+  ```
+- Copy vào native:
+  ```bash
+  npx cap add android
+  npx cap add ios
+  npx cap copy
+  npx cap open android
+  npx cap open ios
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Cấu trúc dự án
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+meme-app/
+├── src/
+│   ├── App.tsx
+│   └── ...
+├── public/
+├── package.json
+└── README.md
+```
 
-## Learn More
+## Đóng góp
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Mọi ý kiến đóng góp hoặc báo lỗi xin gửi qua Issues hoặc Pull Request.
